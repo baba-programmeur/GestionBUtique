@@ -1,0 +1,32 @@
+<div class="container">
+<div class="card shadow mb-9">
+<div class="card-body">
+<table style="width:100%" class="table table-hover">
+ <thead>
+    <tr>
+      <th>Identifiant Produit</th>
+      <th>Nom Produit</th>
+      <th>Prix</th>
+      <th>Date Creation </th>
+     
+    </tr>
+</thead>
+<tbody *ngFor="let produit of produits">
+    <tr>
+      <td>{{produit.idProduit}}</td>
+      <td>{{produit.nomProduit}}</td>
+      <td>{{produit.prixProduit}}</td>
+      <td>{{produit.dateCreation |date:'dd/MM/yyyy'}}</td>
+ 
+<td><a class="btn btn-danger" (click)="supprimerProduit()">Supprimer</a></td>
+
+<td><a class="btn btn-success" [routerLink]="['/updateProduit', produit.id]">Modifier</a></td>
+
+  </tr>
+
+ </tbody>
+
+</table>
+</div>
+</div>
+</div>
